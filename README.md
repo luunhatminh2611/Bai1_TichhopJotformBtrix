@@ -87,16 +87,16 @@ FORM_ID=your_form_id_here
 BITRIX_WEBHOOK_URL=https://<your-domain>.bitrix24.vn/rest/<user_id>/<token>/crm.contact.add.json
 
 7) Cài đặt & chạy
-# 1) Cài dependencies
+1) Cài dependencies
 npm install
 
 
-# 2) Chạy 1 lần (đồng bộ ngay lập tức)
+2) Chạy 1 lần (đồng bộ ngay lập tức)
 node server.js
 
 
-# (tuỳ chọn) Bật chế độ polling mỗi N giây
-# Mở server.js, bỏ comment dòng setInterval và chỉnh POLL_INTERVAL_MS
+(tuỳ chọn) Bật chế độ polling mỗi N giây
+ Mở server.js, bỏ comment dòng setInterval và chỉnh POLL_INTERVAL_MS
 7.1 Cấu trúc thư mục (gợi ý)
 .
 ├── server.js
