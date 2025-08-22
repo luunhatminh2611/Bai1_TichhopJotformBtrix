@@ -17,7 +17,8 @@ Ghi log kết quả và đánh dấu submission đã xử lý (lưu vào process
 
 Có thể cấu hình interval chạy định kỳ (mặc định chạy 1 lần; tùy chọn bật setInterval).
 
-3) Yêu cầu môi trường
+3) Cài đặt môi trường
+Dùng git bash để clone dự án về với https://github.com/luunhatminh2611/Bai1_TichhopJotformBtrix.git hoặc download file zip
 
 Node.js ≥ 18, npm ≥ 8
 
