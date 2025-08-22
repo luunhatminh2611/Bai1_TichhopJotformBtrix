@@ -88,23 +88,17 @@ FORM_ID=your_form_id_here
 BITRIX_WEBHOOK_URL=https://<your-domain>.bitrix24.vn/rest/<user_id>/<token>/crm.contact.add.json
 
 7) Cài đặt & chạy
-1) Cài dependencies
+7.1) Cài dependencies:
 npm install
 
 
-2) Chạy 1 lần (đồng bộ ngay lập tức)
+2) Chạy 1 lần (đồng bộ ngay lập tức):
 node server.js
 
 
 (tuỳ chọn) Bật chế độ polling mỗi N giây
- Mở server.js, bỏ comment dòng setInterval và chỉnh POLL_INTERVAL_MS
-7.1 Cấu trúc thư mục (gợi ý)
-.
-├── server.js
-├── package.json
-├── .env.example
-├── .gitignore
-└── processed.json   # tạo trong runtime, lưu submission đã xử lý
+ Mở server.js, bỏ comment dòng setInterval
+
 8) Cách kiểm thử
 
 Điền form Jotform (Full Name, Phone, Email) và bấm Submit.
@@ -130,13 +124,3 @@ Reset test: Xoá processed.json để đồng bộ lại từ đầu (cẩn th�
 9) Tránh trùng lặp (Duplicate)
 
 Ứng dụng lưu submissionId vào processed.json. Lần sau gặp lại sẽ bỏ qua.
-
-10) Xử lý lỗi & Giới hạn
-
-Jotform rate limit (đặc biệt tài khoản miễn phí) → không nên polling quá dày; khuyến nghị ≥ 30–60s.
-
-401/403: kiểm tra API key Jotform / quyền webhook CRM.
-
-Duplicate: xuất hiện cảnh báo trùng trong Bitrix24 nếu push cùng dữ liệu nhiều lần.
-
-Timeout/Network: retry có backoff là điểm cộng.
